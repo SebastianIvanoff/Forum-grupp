@@ -1,5 +1,5 @@
 const CreateThreadPage = () => {
-    const handleFormSubmit = (e: React.FormEvent) => {
+    const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         const subjectValue = e.currentTarget.subject.value;
