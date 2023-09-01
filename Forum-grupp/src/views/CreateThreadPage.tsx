@@ -5,6 +5,8 @@ const CreateThreadPage = () => {
         const subjectValue = e.currentTarget.subject.value;
         const descriptionValue = e.currentTarget.description.value;
 
+        if (!subjectValue || !descriptionValue) return;
+
         const currentDateAndTime = new Date();
         const formattedDateAndTime = currentDateAndTime.toISOString();
 
