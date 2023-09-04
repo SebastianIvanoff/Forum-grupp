@@ -4,6 +4,7 @@ const CreateThreadPage = () => {
 
         const user = localStorage.getItem("user");
 
+        const titleValue = e.currentTarget.title.value;
         const subjectValue = e.currentTarget.subject.value;
         const descriptionValue = e.currentTarget.description.value;
 
@@ -14,9 +15,10 @@ const CreateThreadPage = () => {
 
         const thread = {
             id: crypto.randomUUID(),
+            title: titleValue,
             user,
             date: formattedDateAndTime,
-            subject: subjectValue,
+            category: subjectValue,
             description: descriptionValue,
             comments: [],
         };
@@ -36,8 +38,16 @@ const CreateThreadPage = () => {
     return (
         <form onSubmit={handleFormSubmit}>
             <div>
-                <label htmlFor="subject">Subject</label>
-                <input type="text" name="subject" />
+                <label htmlFor="title">Title</label>
+                <input type="text" name="title"/>
+            </div>
+            <div>
+                <label htmlFor="category">Category</label>
+                <select name="subject" id="subject">
+                    <option value="QNA">Question and Answers</option>
+                    <option value="MEME">Meme</option>
+                    <option value="THREAD">Thread</option>
+                </select>
             </div>
             <div>
                 <label htmlFor="description">Description</label>
