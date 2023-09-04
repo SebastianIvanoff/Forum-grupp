@@ -1,23 +1,31 @@
-import React from 'react'
+// import React from 'react'
 import { BiCommentDetail } from "react-icons/bi";
-import { ThreadInterface } from '../types';
+// import { ThreadInterface } from '../types';
 
 
 const ThreadCard = ({card}) => {
 
   return (
     <div className="thread-card">
-        
-        <div className="title-container">
-          <h2 className="thread-title">{card.title}</h2>
-          <p className="thread-user">{card.user}</p>
+        <div className="user-date-container">
+          <p className="thread-user">Posted by u/{card.user}</p>
           <p className="thread-date">{card.date}</p>
         </div>
-        <p className="thread-content">{card.description}</p>
-        <p className="comments">
-          <BiCommentDetail />
-          {card.comments}
-        </p>
+        <div className="title-container">
+          <p className="thread-category">{card.category}</p>
+          <h2 className="thread-title">{card.title}</h2>
+        </div>
+        <div className="thread-description-container">
+          <p className="thread-description">{card.description}</p>
+        </div>
+        <div className="thread-bottom-container">
+          <div className="thread-comment-link-container">
+            <p className="comments">
+            <BiCommentDetail />
+            {card.comments.length} Comments
+            </p>
+          </div>
+        </div>
       </div>
   )
 }

@@ -14,8 +14,8 @@ function App() {
     localStorage.setItem("user", user);
   }, []);
 
-  const threadsJSON = localStorage.getItem("threads");
-  const threads = JSON.parse(threadsJSON ?? "[]");
+//   const threadsJSON = localStorage.getItem("threads");
+//   const threads = JSON.parse(threadsJSON ?? "[]");
 
   return (
     <div className="App">
