@@ -3,7 +3,7 @@ import { BiCommentDetail } from "react-icons/bi";
 import { ThreadInterface } from '../types';
 
 
-const ThreadCard = (card: any) => {
+const ThreadCard = ({card}) => {
 
   return (
     <div className="thread-card">
