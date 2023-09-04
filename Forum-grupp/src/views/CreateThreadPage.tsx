@@ -3,11 +3,10 @@ const CreateThreadPage = () => {
         e.preventDefault();
 
         const user = localStorage.getItem("user");
-
-        const titleValue = e.currentTarget.title.value;
+        
         const subjectValue = e.currentTarget.subject.value;
         const descriptionValue = e.currentTarget.description.value;
-
+        const titleValue = e.currentTarget.Title.value;
         if (!subjectValue || !descriptionValue) return;
 
         const currentDateAndTime = new Date();
@@ -38,8 +37,8 @@ const CreateThreadPage = () => {
     return (
         <form onSubmit={handleFormSubmit}>
             <div>
-                <label htmlFor="title">Title</label>
-                <input type="text" name="title"/>
+                <label htmlFor="Title">Title</label>
+                <input type="text" name="Title"/>
             </div>
             <div>
                 <label htmlFor="category">Category</label>

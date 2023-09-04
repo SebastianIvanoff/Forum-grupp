@@ -11,8 +11,7 @@ const ThreadList = () => {
     <div className="thread-container" >
       <h1 className="thread-app-name">Reddit 2.0</h1>
       {threadListCards.map((card: ThreadInterface) => {
-        console.log(card)
-        return <ThreadCard card={card}/>
+        return <ThreadCard card={card} key={card.id}/>
         
       })}
     </div>
