@@ -2,6 +2,8 @@ const CreateThreadPage = () => {
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
+        const user = localStorage.getItem("user");
+
         const subjectValue = e.currentTarget.subject.value;
         const descriptionValue = e.currentTarget.description.value;
 
@@ -11,12 +13,24 @@ const CreateThreadPage = () => {
         const formattedDateAndTime = currentDateAndTime.toISOString();
 
         const thread = {
+            id: crypto.randomUUID(),
+            user,
             date: formattedDateAndTime,
             subject: subjectValue,
             description: descriptionValue,
+            comments: [],
         };
 
-        console.log(thread);
+        const existingThreadsJSON = localStorage.getItem("threads");
+        let threads = [];
+
+        if (existingThreadsJSON) {
+            threads = JSON.parse(existingThreadsJSON);
+        }
+
+        threads.push(thread);
+
+        localStorage.setItem("threads", JSON.stringify(threads));
     };
 
     return (
