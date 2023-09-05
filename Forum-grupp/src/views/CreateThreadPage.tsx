@@ -1,9 +1,11 @@
+import { ThreadInterface } from "../types";
+
 const CreateThreadPage = () => {
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         const user = localStorage.getItem("user");
-        
+
         const subjectValue = e.currentTarget.subject.value;
         const descriptionValue = e.currentTarget.description.value;
         const titleValue = e.currentTarget.Title.value;
@@ -12,10 +14,10 @@ const CreateThreadPage = () => {
         const currentDateAndTime = new Date();
         const formattedDateAndTime = currentDateAndTime.toISOString();
 
-        const thread = {
+        const thread: ThreadInterface = {
             id: crypto.randomUUID(),
             title: titleValue,
-            user,
+            user: user || "",
             date: formattedDateAndTime,
             category: subjectValue,
             description: descriptionValue,
@@ -23,7 +25,7 @@ const CreateThreadPage = () => {
         };
 
         const existingThreadsJSON = localStorage.getItem("threads");
-        let threads = [];
+        let threads: ThreadInterface[] = [];
 
         if (existingThreadsJSON) {
             threads = JSON.parse(existingThreadsJSON);
@@ -38,7 +40,7 @@ const CreateThreadPage = () => {
         <form onSubmit={handleFormSubmit}>
             <div>
                 <label htmlFor="Title">Title</label>
-                <input type="text" name="Title"/>
+                <input type="text" name="Title" />
             </div>
             <div>
                 <label htmlFor="category">Category</label>

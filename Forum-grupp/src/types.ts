@@ -9,7 +9,7 @@ export interface ThreadInterface {
     description: string;
     date: string;
     user: string;
-    comments: [];
+    comments: CommentInterface[];
 }
 
 export interface CommentInterface {
