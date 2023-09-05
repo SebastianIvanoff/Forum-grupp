@@ -3,4 +3,47 @@
     margin: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    /* background-color: black;
+    color: white; */
+}
+#root{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    height: 100vh;
+}
+.app{
+    width: 30vw;
+    justify-content: center;
+}
+.create-post-link{
+    background-color: #1a1a1b;
+    padding: 10px;
+    border-radius: 7px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #343536;
+}
+.create-post-link img{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px
+}
+.create-post-real-link{
+    min-width: 530px;
+    /* padding: 10px; */
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #272729;
+    border: 1px solid #343536;
+}
+.create-post-link-input{
+    min-width: 530px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #272729;
+    border: 1px solid #343536;
 }

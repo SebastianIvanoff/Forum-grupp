@@ -18,8 +18,13 @@ function App() {
     //   const threads = JSON.parse(threadsJSON ?? "[]");
 
     return (
-        <div className="App">
-            <Link to={"/create-thread"}>Create Post</Link>
+        <div className="app">
+            <div className="create-post-link">
+                <img src="https://www.redditstatic.com/avatars/avatar_default_02_0079D3.png"></img>
+                <Link className="create-post-real-link" to={"/create-thread"}>
+                <input type="text" name="Create Post" placeholder="Create Post" className="create-post-link-input" />
+                </Link>
+            </div>
             <ThreadList />
         </div>
     );
