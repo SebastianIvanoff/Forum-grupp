@@ -5,24 +5,24 @@ import ThreadList from "./components/ThreadList";
 import { useEffect } from "react";
 
 function App() {
-  useEffect(() => {
-    const randomId = crypto.randomUUID();
-    const user = `User${randomId}`;
-    const userExistInLocalStorage = localStorage.getItem("user");
+    useEffect(() => {
+        const randomId = crypto.randomUUID().split("-")[0];
+        const user = `User-${randomId}`;
+        const userExistInLocalStorage = localStorage.getItem("user");
 
-    if (userExistInLocalStorage) return;
-    localStorage.setItem("user", user);
-  }, []);
+        if (userExistInLocalStorage) return;
+        localStorage.setItem("user", user);
+    }, []);
 
-//   const threadsJSON = localStorage.getItem("threads");
-//   const threads = JSON.parse(threadsJSON ?? "[]");
+    //   const threadsJSON = localStorage.getItem("threads");
+    //   const threads = JSON.parse(threadsJSON ?? "[]");
 
-  return (
-    <div className="App">
-      <Link to={"/create-thread"}>Create Post</Link>
-      <ThreadList />
-    </div>
-  );
+    return (
+        <div className="App">
+            <Link to={"/create-thread"}>Create Post</Link>
+            <ThreadList />
+        </div>
+    );
 }
 
 export default App;
