@@ -12,3 +12,9 @@ export interface ThreadInterface {
     comments: [];
 }
 
+export interface CommentInterface {
+    id: string
+    user: string
+    date: string
+    description: string
+}

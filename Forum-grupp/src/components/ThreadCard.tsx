@@ -1,12 +1,15 @@
 // import React from 'react'
 import { BiCommentDetail } from "react-icons/bi";
+import { ThreadInterface } from "../types";
+import { Link } from "react-router-dom";
 // import { ThreadInterface } from '../types';
 
 
-const ThreadCard = ({card}) => {
+const ThreadCard = ({card}: {card:ThreadInterface}) => {
 
   return (
-    <div className="thread-card">
+    
+       <Link to={`/thread/${card.id}`} className="thread-card">
         <div className="user-date-container">
           <p className="thread-user">Posted by u/{card.user}</p>
           <p className="thread-date">{card.date}</p>
@@ -26,7 +29,9 @@ const ThreadCard = ({card}) => {
             </p>
           </div>
         </div>
-      </div>
+      </Link>
+    
+   
   )
 }
 
