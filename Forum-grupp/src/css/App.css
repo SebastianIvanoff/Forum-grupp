@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     background-color: black;
-    color: white;
+    color: #d7dadc;
     height: 100vh;
 }
 .app{
@@ -32,15 +32,13 @@
     height: 40px
 }
 .create-post-real-link{
-    min-width: 530px;
-    /* padding: 10px; */
     border-radius: 5px;
     font-size: 14px;
     background-color: #272729;
     border: 1px solid #343536;
 }
 .create-post-link-input{
-    min-width: 530px;
+    width: 26vw;
     padding: 10px;
     border-radius: 5px;
     font-size: 14px;
