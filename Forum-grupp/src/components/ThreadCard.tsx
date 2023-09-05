@@ -19,7 +19,7 @@ const ThreadCard = ({ card }: { card: ThreadInterface }) => {
             </div>
             <div className="thread-bottom-container">
                 <div className="thread-comment-link-container">
-                    <p className="comments">
+                    <p className="comment-count">
                         <BiCommentDetail />
                         {card.comments.length} Comments
                     </p>
