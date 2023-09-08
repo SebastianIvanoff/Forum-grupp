@@ -1,6 +1,6 @@
 // import { immutableRouteKeys } from "@remix-run/router/dist/utils";
 
-type ThreadCategory = "THREAD" | "QNA" | "MEME"
+export type ThreadCategory = "THREAD" | "QNA" | "MEME";
 
 export interface ThreadInterface {
     id: string;
@@ -12,3 +12,9 @@ export interface ThreadInterface {
     comments: [];
 }
 
+export interface CommentInterface {
+    id: string;
+    user: string;
+    date: string;
+    description: string;
+}
